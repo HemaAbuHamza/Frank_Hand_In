@@ -46,25 +46,38 @@ namespace Hand_in_Frank
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                
+                string[] textFiles = Directory.GetFiles(FBD.SelectedPath , "*.txt");
+                string[] imageFiles = Directory.GetFiles(FBD.SelectedPath, "*.jpg");
 
-
-                string[] files = Directory.GetFiles(FBD.SelectedPath);
                 string[] dirs = Directory.GetDirectories(FBD.SelectedPath);
 
-                foreach (string file in files)
+                //Handel the text files
+                foreach (string file in textFiles)
                 {
                     textList.Add(new ShowText() { MyText = file });
-                    imageList.Add(new ShowImages() { MyImage = file });
 
                 }
 
                 foreach (string dir in dirs)
                 {
                     textList.Add(new ShowText() { MyText = dir });
+                }
+
+
+                //Handel the Image files 
+                foreach (string file in imageFiles)
+                {
+                    imageList.Add(new ShowImages() { MyImage = file });
+
+                }
+
+                foreach (string dir in dirs)
+                {
                     imageList.Add(new ShowImages() { MyImage = dir });
                 }
             }
+
+
             listbox2.ItemsSource = textList;
             listbox1.ItemsSource = imageList;
         }

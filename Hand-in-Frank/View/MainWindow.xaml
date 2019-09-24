@@ -21,8 +21,7 @@
         <ListBox x:Name="listbox2" Margin="30,60,430,60">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding MyText}">
-                    </TextBlock>
+                    <TextBlock Text="{Binding Path= MyText}"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
