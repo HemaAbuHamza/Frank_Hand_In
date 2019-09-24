@@ -24,13 +24,17 @@ namespace Hand_in_Frank
     public partial class MainWindow : Window
     {
 
-        List<ShowText> list = new List<ShowText>();
-        List<ShowImages> list2 = new List<ShowImages>();
+        List<ShowText> textList = new List<ShowText>();
+        List<ShowImages> imageList = new List<ShowImages>();
 
 
         public MainWindow()
         {
             InitializeComponent();
+
+            //Clear the list when we start
+            listbox1.Items.Clear();
+            listbox2.Items.Clear();
         }
         
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,27 +46,27 @@ namespace Hand_in_Frank
 
             if (result == System.Windows.Forms.DialogResult.OK)
             {
-                listview1.Items.Clear();
+                
+
+
                 string[] files = Directory.GetFiles(FBD.SelectedPath);
                 string[] dirs = Directory.GetDirectories(FBD.SelectedPath);
 
                 foreach (string file in files)
                 {
-                    listview1.Items.Add(file);
-                    list.Add(new ShowText() { MyText = file });
-                    list2.Add(new ShowImages() { MyImage = file });
+                    textList.Add(new ShowText() { MyText = file });
+                    imageList.Add(new ShowImages() { MyImage = file });
 
                 }
 
                 foreach (string dir in dirs)
                 {
-                    listview1.Items.Add(dir);
-                    list.Add(new ShowText() { MyText = dir });
-                    list2.Add(new ShowImages() { MyImage = dir });
+                    textList.Add(new ShowText() { MyText = dir });
+                    imageList.Add(new ShowImages() { MyImage = dir });
                 }
             }
-            listbox1.ItemsSource = list;
-            listbox1.ItemsSource = list2;
+            listbox2.ItemsSource = textList;
+            listbox1.ItemsSource = imageList;
         }
 
  

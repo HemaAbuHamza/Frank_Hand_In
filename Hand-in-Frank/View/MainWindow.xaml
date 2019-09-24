@@ -9,13 +9,20 @@
 
     <Grid>
         <Button Content="Open File" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Width="122" Height="30" Click="Button_Click"/>
-        <ListView x:Name="listview1" Margin="30,60,492.6,37"/>
-        
-        <ListBox x:Name="listbox1" Margin="357,60,189,37">
+
+        <ListBox x:Name="listbox1" Margin="398,60,64,60">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Image Source="{Binding MyImage}" Width="200" Height="200"></Image>
-                    
+                    <Image Source="{Binding MyImage}" Width="280" Height="280"></Image>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="listbox2" Margin="30,60,430,60">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding MyText}">
+                    </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
