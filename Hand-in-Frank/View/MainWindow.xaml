@@ -10,6 +10,16 @@
     <Grid>
         <Button Content="Open File" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Width="122" Height="30" Click="Button_Click"/>
         <ListView x:Name="listview1" Margin="30,60,492.6,37"/>
+        
+        <ListBox x:Name="listbox1" Margin="357,60,189,37">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding MyImage}" Width="200" Height="200"></Image>
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 
 </Window>

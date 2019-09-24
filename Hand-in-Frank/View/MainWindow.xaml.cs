@@ -25,6 +25,9 @@ namespace Hand_in_Frank
     {
 
         List<ShowText> list = new List<ShowText>();
+        List<ShowImages> list2 = new List<ShowImages>();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,8 +35,8 @@ namespace Hand_in_Frank
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
 
+            
             FolderBrowserDialog FBD = new FolderBrowserDialog();
             DialogResult result = FBD.ShowDialog();
 
@@ -47,6 +50,7 @@ namespace Hand_in_Frank
                 {
                     listview1.Items.Add(file);
                     list.Add(new ShowText() { MyText = file });
+                    list2.Add(new ShowImages() { MyImage = file });
 
                 }
 
@@ -54,8 +58,11 @@ namespace Hand_in_Frank
                 {
                     listview1.Items.Add(dir);
                     list.Add(new ShowText() { MyText = dir });
+                    list2.Add(new ShowImages() { MyImage = dir });
                 }
             }
+            listbox1.ItemsSource = list;
+            listbox1.ItemsSource = list2;
         }
 
  

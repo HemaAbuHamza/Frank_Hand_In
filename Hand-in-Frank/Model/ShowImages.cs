@@ -8,5 +8,6 @@ namespace Hand_in_Frank.Model
 {
     public class ShowImages
     {
+        public string MyImage { get; set; }
     }
 }
