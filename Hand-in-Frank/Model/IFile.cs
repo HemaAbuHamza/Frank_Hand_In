@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hand_in_Frank.Model
 {
-    public class ShowText
+    interface IFile
     {
-        //public string MyText { get; set; }
+       string FilePath();
     }
 }

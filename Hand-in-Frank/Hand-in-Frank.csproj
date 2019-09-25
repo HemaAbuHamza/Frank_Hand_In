@@ -65,8 +65,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FolderBrowserDialog.cs" />
+    <Compile Include="Model\FileModel.cs" />
+    <Compile Include="Model\IFile.cs" />
     <Compile Include="Model\ShowImages.cs" />
     <Compile Include="Model\ShowText.cs" />
+    <Compile Include="ViewModel1\FileView.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
